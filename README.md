@@ -7,7 +7,7 @@ env-images
 
 The images here found are environments for compiling, building and/or test different ElasTest components.
 
-##How to add a new image?
+## How to add a new image?
 
 You should add a new folder with the name of the image that contains at least:
 - Dockerfile
