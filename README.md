@@ -13,7 +13,8 @@ You should add a new folder with the name of the image that contains at least:
 - Dockerfile
 - README.md (following the template provided [here](https://github.com/elastest/env-images/template)) 
 
-What is ElasTest
+
+# What is ElasTest?
 -----------------
 
 This repository is part of [ElasTest], which is an open source elastic platform
