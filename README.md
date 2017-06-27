@@ -7,14 +7,16 @@ env-images
 
 The images here found are environments for compiling, building and/or test different ElasTest components.
 
-##How to add a new image?
+## How to add a new image?
 
 You should add a new folder with the name of the image that contains at least:
 - Dockerfile
 - README.md (following the template provided [here](https://github.com/elastest/env-images/template)) 
 
-What is ElasTest
------------------
+-----------------------------------------------------------
+
+What is ElasTest?
+=============================================================================
 
 This repository is part of [ElasTest], which is an open source elastic platform
 aimed to simplify end-to-end testing. ElasTest platform is based on three
