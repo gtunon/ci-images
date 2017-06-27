@@ -19,7 +19,7 @@ elastest/docker-siblings
 This image is a basic compilation environment. Specifically thougth to be used from a Jenkins pipeline and prepared to connect to AWS ECR. 
 
 ## Supported tags and respective `Dockerfile` links
--	[ `latest` (*1.0/Dockerfile*)](https://github.com/elastest/env-images/docker-siblings)
+-	[ `latest` (*1.0/Dockerfile*)](https://github.com/elastest/env-images/blob/4de82eb06433e1b993cede3d6c512e2e5e0340e6/docker-siblings/Dockerfile)
 
 ## Quick reference
 
