@@ -6,7 +6,7 @@ ELASTEST - Template for Docker Images README
 ************************************************************************ 
 -->
 
-<!- Elastest logo ->
+<!-- Elastest logo -->
 [![][ElasTest Logo]][ElasTest]
 
 Copyright © 2017-2019 [ElasTest]. Licensed under [Apache 2.0 License].
@@ -14,16 +14,14 @@ Copyright © 2017-2019 [ElasTest]. Licensed under [Apache 2.0 License].
 elastest/docker-siblings 
 ==============================
 
-# What is this? 
+## What is this? 
 
 This image is a basic compilation environment. Specifically thougth to be used from a Jenkins pipeline and prepared to connect to AWS ECR. 
 
-===============================
+## Supported tags and respective `Dockerfile` links
+-	[ `latest` (*1.0/Dockerfile*)](https://github.com/elastest/env-images/docker-siblings)
 
-# Supported tags and respective `Dockerfile` links
--	[`1.0`, `latest` (*1.0/Dockerfile*)](https://github.com/elastest/env-images/docker-siblings)
-
-# Quick reference
+## Quick reference
 
 -	**Where to get help**:  
 	[the ElastTest mailing list](), [the Elastest Slack](), or [Stack Overflow]()
@@ -60,9 +58,15 @@ This image provides an environment with the following tools installed:
 
 This image should be launched while linked with the docker-host as follows:
 
-- Docker run (without aws): `docker run -u jenkins -v /var/run/docker.sock:/var/run/docker.sock:rw elastest/docker-siblings `
+- Docker run (without aws): 
+```
+docker run -u jenkins -v /var/run/docker.sock:/var/run/docker.sock:rw elastest/docker-siblings 
+```
 
-- Docker run (with aws): `docker run -u jenkins -v /var/run/docker.sock:/var/run/docker.sock:rw -v <aws config files path>:/home/jenkins/.aws elastest/docker-siblings `
+- Docker run (with aws): 
+```
+docker run -u jenkins -v /var/run/docker.sock:/var/run/docker.sock:rw -v <aws config files path>:/home/jenkins/.aws elastest/docker-siblings 
+```
 
 - Jenkins pipeline: 
 ```
@@ -77,9 +81,9 @@ This container needs the following to work properly:
 
 - docker installed in the host with the posibility to be shared. 
 
-- aws configuration, you can avoid running the container with the .aws volume if you don't use the aws cli. For information of the configuration files please visit the [Amazon Reference on Config Files](http://docs.aws.amazon.com/cli/latest/userguide/cli-config-files.html) 
+- aws configuration, you can avoid running the container with the aws volume if you don't use the aws cli. For information of the configuration files please visit the [Amazon Reference on Config Files](http://docs.aws.amazon.com/cli/latest/userguide/cli-config-files.html) 
 
-## Integration with other containers or tools)
+
 
 [Apache 2.0 License]: http://www.apache.org/licenses/LICENSE-2.0
 [ElasTest]: http://elastest.io/
