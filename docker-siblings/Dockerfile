@@ -1,7 +1,7 @@
 ########################
 #
-# Docker image for a basic compilation environment. (Maven and docker siblings)
-# Specifically thougth to be used from a Jenkins pipeline and prepared to connect to AWS ECR. 
+# Docker file to explain docker in docker build run and test 
+# a maven aplication
 #
 ########################
 
@@ -47,13 +47,11 @@ RUN add-apt-repository \
     "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 
 RUN apt-get update && \
-    apt-get install -y docker-ce
+    apt-get install -y docker-ce=17.06.0~ce-0~ubuntu
 # docker siblings (instead of docker in docker)
 
 RUN echo "export DOCKER_HOST='unix:///var/run/docker.sock'" >> /root/.bashrc \
  && echo "export DEBIAN_FRONTEND=noninteractive" >> /root/.bashrc
-
-#VOLUME /var/run/docker.sock
 
 ## aws cli
 # AWS CLI needs the PYTHONIOENCODING environment varialbe to handle UTF-8 correctly:
@@ -69,9 +67,13 @@ RUN apt-get install -y \
     python \
     python-pip \
     python-virtualenv \
+    unzip \
     vim
     
-RUN  pip install awscli
+#RUN  pip install awscli
+RUN  curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip" && \
+     unzip awscli-bundle.zip && \
+     ./awscli-bundle/install -i /var/lib/aws -b /usr/bin/aws
     
 ## git 
 RUN apt-get -y install git
@@ -82,8 +84,6 @@ RUN useradd -ms /bin/bash jenkins &&\
 
 RUN usermod -aG docker jenkins
 
-#RUN chown jenkins:docker /var/run/docker.sock
-
 # set envs
 ENV WORKSPACE /home/jenkins
 
@@ -92,4 +92,5 @@ USER jenkins
 WORKDIR ${WORKSPACE} 
 
 # launch container
+#ENTRYPOINT [ "/bin/bash" , "-c" , "./scripts/sh_entry_point.sh ${*}" ]
 ENTRYPOINT ["/bin/bash"]
