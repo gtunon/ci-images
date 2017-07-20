@@ -47,7 +47,7 @@ This image provides an environment with the following tools installed:
 - Docker-compose
 - npm
 - Node
-- Angular
+- Angular CLI
 
 
 # How to use this image
