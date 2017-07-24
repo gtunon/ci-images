@@ -1,0 +1,25 @@
+node('docker'){
+    stage "Container Prep"
+        
+        echo("the node is up")
+        def mycontainer = docker.image('elastest/docker-siblings:latest')
+        mycontainer.pull() // make sure we have the latest available from Docker Hub
+        
+        mycontainer.inside("-u jenkins -v /var/run/docker.sock:/var/run/docker.sock:rw") {
+
+            git 'https://github.com/elastest/env-images'
+
+            stage "Build image - Package"
+                echo ("building...")
+                def myimage = docker.build("elastest/docker-compose-py-siblings","./docker-compose-py-siblings"
+
+            stage "Publish"
+                echo ("Publishing...")
+                //this is work around as withDockerRegistry is not working properly
+                withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'elastestci-dockerhub',
+                usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {
+                    sh 'docker login -u "$USERNAME" -p "$PASSWORD"'
+                    myimage.push()
+                }
+        }
+}
