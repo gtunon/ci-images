@@ -7,11 +7,11 @@ node('docker'){
         
         mycontainer.inside("-u jenkins -v /var/run/docker.sock:/var/run/docker.sock:rw") {
 
-            git 'https://github.com/elastest/env-images'
+            git 'https://github.com/elastest/ci-images'
 
             stage "Build image - Package"
                 echo ("building...")
-                def myimage = docker.build("elastest/docker-compose-py-siblings","./docker-compose-py-siblings"
+                def myimage = docker.build("elastest/ci-docker-compose-py-siblings","./docker-compose-py-siblings"
 
             stage "Publish"
                 echo ("Publishing...")

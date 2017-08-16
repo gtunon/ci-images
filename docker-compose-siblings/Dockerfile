@@ -8,7 +8,7 @@
 #
 ########################
 
-FROM elastest/docker-siblings:latest
+FROM elastest/ci-docker-siblings:latest
 
 MAINTAINER Guiomar Tuñon <gtunon@naevatec.com>
 

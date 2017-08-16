@@ -1,4 +1,4 @@
-FROM elastest/docker-compose-siblings:latest
+FROM elastest/ci-docker-compose-siblings:latest
 
 LABEL maintainer "elastest-users@googlegroups.com"
 LABEL version="0.1.0"

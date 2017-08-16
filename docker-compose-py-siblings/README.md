@@ -10,7 +10,7 @@ elastest-docker-compose-py-siblings
 ===============================
 
 # Supported tags and respective `Dockerfile` links
--	[`latest`](https://github.com/elastest/env-images/docker-compose-py-siblings/Dockerfile)
+-	[`latest`](https://github.com/elastest/ci-images/docker-compose-py-siblings/Dockerfile)
 
 # Quick reference
 
@@ -24,12 +24,12 @@ elastest-docker-compose-py-siblings
 	[the ElasTest community](https://github.com/elastest)
 
 -	**Published image artifact details**:  
-	[repo-info repo's `elastest/environments` directory](https://github.com/elastest/env-images/blob/master/<image-name>) ([history](https://github.com/elastest/environments/commits/master/<image-name>))  
+	[repo-info repo's `elastest/environments` directory](https://github.com/elastest/ci-images/blob/master/<image-name>) ([history](https://github.com/elastest/environments/commits/master/<image-name>))  
 	(image metadata, transfer size, etc)
 
 <!--
 -	**Image updates**:  
-	[official-images PRs with label `elastest/env-<image-name>`](https://github.com/docker-library/official-images/pulls?q=label%3Alibrary%2Fmysql)  
+	[official-images PRs with label `elastest/ci-<image-name>`](https://github.com/docker-library/official-images/pulls?q=label%3Alibrary%2Fmysql)  
 
 -	**Source of this description**:  
 	[docs repo's `mysql/` directory](https://github.com/docker-library/docs/tree/master/mysql) ([history](https://github.com/docker-library/docs/commits/master/mysql))
@@ -55,7 +55,7 @@ The intended use of this image is within a `Jenkinsfile`.
 
 To build it from the `cwd`:
 
-`docker build -t elastest/docker-compose-py-siblings:latest ./`
+`docker build -t elastest/ci-docker-compose-py-siblings:latest ./`
 
 ## Dependencies (other containers or tools)
 
