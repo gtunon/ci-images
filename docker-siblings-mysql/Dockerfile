@@ -41,13 +41,13 @@ ENV PATH=${M2_HOME}/bin:${PATH}
 
 ## docker
 
-RUN curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
+RUN curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add -
 
 RUN add-apt-repository \
-    "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+    "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable"
 
 RUN apt-get update && \
-    apt-get install -y docker-ce=17.06.0~ce-0~ubuntu
+    apt-get install -y docker-ce=17.06.0~ce-0~debian
 # docker siblings (instead of docker in docker)
 
 RUN echo "export DOCKER_HOST='unix:///var/run/docker.sock'" >> /root/.bashrc \
