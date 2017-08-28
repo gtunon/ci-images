@@ -51,7 +51,7 @@ ENV M2_HOME /usr/local/maven
 ENV PATH=${M2_HOME}/bin:${PATH}
 
 ## docker
-sudo apt-get install \
+RUN apt-get install \
      ca-certificates \
      gnupg2 \
      software-properties-common
