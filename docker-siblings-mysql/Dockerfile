@@ -79,10 +79,10 @@ RUN  curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle
 RUN apt-get -y install git
 
 ## mySQL
-RUN apt-get update
-RUN apt-get install mysql-server
-RUN mysql_secure_installation
-RUN mysql_install_db
+RUN apt-get update -y
+RUN apt-get install -y mysql-server
+RUN mysql_secure_installation -y
+RUN mysql_install_db -y
 
 #non root user
 RUN useradd -ms /bin/bash jenkins &&\
