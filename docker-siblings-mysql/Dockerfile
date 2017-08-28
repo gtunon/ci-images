@@ -51,7 +51,11 @@ ENV M2_HOME /usr/local/maven
 ENV PATH=${M2_HOME}/bin:${PATH}
 
 ## docker
-
+sudo apt-get install \
+     ca-certificates \
+     gnupg2 \
+     software-properties-common
+	 
 RUN curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add -
 
 RUN add-apt-repository \
@@ -59,6 +63,7 @@ RUN add-apt-repository \
 
 RUN apt-get update && \
     apt-get install -y docker-ce=17.06.0~ce-0~debian
+	
 # docker siblings (instead of docker in docker)
 
 RUN echo "export DOCKER_HOST='unix:///var/run/docker.sock'" >> /root/.bashrc \
