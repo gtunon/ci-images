@@ -109,4 +109,4 @@ WORKDIR ${WORKSPACE}
 
 # launch container
 #ENTRYPOINT [ "/bin/bash" , "-c" , "./scripts/sh_entry_point.sh ${*}" ]
-ENTRYPOINT ["/bin/bash"]
+#ENTRYPOINT ["/bin/bash"]
