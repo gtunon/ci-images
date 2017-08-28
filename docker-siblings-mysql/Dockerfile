@@ -5,7 +5,7 @@
 #
 ########################
 
-FROM ubuntu:16.04
+FROM mysql:5
 
 MAINTAINER Guiomar Tuñon <gtunon@naevatec.com>
 
@@ -77,12 +77,6 @@ RUN  curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle
     
 ## git 
 RUN apt-get -y install git
-
-## mySQL
-RUN apt-get update -y
-RUN apt-get install -y mysql-server
-RUN mysql_secure_installation -y
-RUN mysql_install_db -y
 
 #non root user
 RUN useradd -ms /bin/bash jenkins &&\
