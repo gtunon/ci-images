@@ -13,9 +13,6 @@ MAINTAINER Guiomar Tuñon <gtunon@naevatec.com>
 USER root 
 
 # prepare environment
-RUN apt-get update && \
-    apt-get install -y  software-properties-common && \
-    add-apt-repository ppa:webupd8team/java 
     
 RUN apt-get update && \ 
     apt-get upgrade -y && \
